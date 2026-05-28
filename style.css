@@ -133,7 +133,8 @@ a {
 .thumbnails {
     display: block;
     width: 100%;
-    margin-bottom: 25px;
+    max-width: 500px;
+    margin-bottom: 5px;
 }
 
 /* 이미지를 부드럽게 나열하기 위해 내부 요소 정렬 */
@@ -161,7 +162,6 @@ a {
 /* 작품 설명 텍스트 영역 */
 .info {
     max-width: 600px; /* 텍스트가 너무 가로로 길어지지 않게 제한 (가독성 확보) */
-    padding: 0 5px;
 }
 
 .info h2 {
@@ -175,6 +175,94 @@ a {
     font-size: 0.9rem;
     color: #555555;
     line-height: 1.7; /* 텍스트 줄간격을 넓혀 가벼운 느낌 강조 */
+}
+
+/* 작품 정보(meta-info) 스타일 기조 */
+.art-card .info .meta-info {
+    color: #888;          /* 💡 조금 연한 회색으로 처리하여 제목과 본문 사이에서 밸런스를 잡아줍니다. */
+    font-size: 0.95rem;   /* 💡 살짝 아담한 크기로 조절 */
+    margin-bottom: 0;     /* 아래 description과의 마진을 정밀 제어하기 위해 0으로 리셋 */
+}
+
+/* 작품 정보와 설명 텍스트 사이 간격 띄우기 */
+.art-card .info .description {
+    margin-top: 40px;     /* 💡 이 숫자를 30px, 50px 등으로 바꾸며 마음에 드는 여백을 찾으세요. */
+}
+
+.main-images {
+    display: block;
+    width: 100%;
+}
+
+/* 🖼️ 상세 페이지에 나열되는 메인 이미지 각각의 스타일 */
+.main-images img {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    height: auto;          /* 💡 원본 사진 비율을 절대 깨뜨리지 않고 온전히 보여줍니다 */
+    object-fit: contain;   /* 💡 이미지가 크롭(잘림) 없이 전체 다 나오도록 설정 */
+    margin-bottom: 40px;   /* 💡 중요: 이미지와 이미지 사이의 세로 간격 (원하는 만큼 조절) */
+    background-color: #f7f7f7;
+}
+
+/* 맨 마지막 이미지 아래에는 쓸데없는 여백이 생기지 않도록 제거 */
+.main-images img:last-child {
+    margin-bottom: 0;
+}
+
+/* 💻 PC 화면(769px 이상)에서 글과 이미지 영역의 레이아웃 조화 */
+@media (min-width: 769px) {
+    .detail-page-card {
+        display: table;
+        width: 100%;
+    }
+    
+    .detail-page-card .info {
+        display: table-cell;
+        width: 35%;        /* 글 영역 가로 비중 */
+        vertical-align: top;
+        padding-right: 40px;
+    }
+    
+    .detail-page-card .main-images {
+        display: table-cell;
+        width: 65%;        /* 이미지 영역 가로 비중 */
+        vertical-align: top;
+    }
+}
+
+.back-button-container {
+    width: 100%;
+    margin-bottom: 40px;   /* 💡 버튼 아래 작품 콘텐츠와의 여유로운 간격 */
+    display: block;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;              /* 💡 화살표와 Back 글자 사이의 간격 */
+    color: #333;           /* 기본 글자 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-size: 0.95rem;     /* 과하지 않고 은은한 크기 */
+    letter-spacing: 0.05em;/* 자간을 살짝 벌려 세련되게 처리 */
+    font-weight: 500;
+}
+
+/* 화살표 기호 자체의 정렬 미세조정 */
+.back-btn .arrow {
+    font-size: 1.1rem;
+    position: relative;
+    top: -1px;             /* 글자 중심축과 시각적으로 맞추기 위해 살짝 올림 */
+    transition: transform 0.2s ease; /* 💡 애니메이션 준비 */
+}
+
+/* ✨ 마우스를 올렸을 때(Hover) 생동감 주는 효과 */
+.back-btn:hover {
+    color: #888;           /* 글자색이 은은한 회색으로 변경 */
+}
+
+.back-btn:hover .arrow {
+    transform: translateX(-4px); /* 💡 화살표가 왼쪽으로 4px 스르륵 움직임 */
 }
 
 /* ==========================================================================
