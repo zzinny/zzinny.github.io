@@ -21,5 +21,16 @@ fetch('/sidebar.html')
                 }
             });
         }
+
+        // 현재 주소에 따라 메뉴 아이템 하이라이트 효과 주기
+        const currentPath = window.location.pathname;
+        const menuItems = document.querySelectorAll('.menu-content .menu-item');
+
+        menuItems.forEach(item => {
+            const itemPath = item.getAttribute('href');
+            if (currentPath.includes(itemPath)) {
+                item.classList.add('active');
+            }
+        });
     })
     .catch(error => console.error(error));
