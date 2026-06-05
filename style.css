@@ -45,9 +45,13 @@ a {
     
     .content {
         width: 80%;
-        padding: 20px;
+        padding: 20px 0px;
         border-left: 1px solid black;
         font-weight: 500;
+    }
+
+    .content .text {
+        padding: 0px 20px;
     }
 }
 
@@ -177,7 +181,7 @@ a {
     max-width: 650px;
     height: auto;          /* 💡 원본 사진 비율을 절대 깨뜨리지 않고 온전히 보여줍니다 */
     object-fit: contain;   /* 💡 이미지가 크롭(잘림) 없이 전체 다 나오도록 설정 */
-    margin: 4px 4px;
+    margin: 4px 4px 4px 40px;
 }
 
 /* 맨 마지막 이미지 아래에는 쓸데없는 여백이 생기지 않도록 제거 */
@@ -209,6 +213,7 @@ a {
 .back-button-container {
     width: 100%;
     margin-bottom: 40px;   /* 💡 버튼 아래 작품 콘텐츠와의 여유로운 간격 */
+    padding: 0px 10px;
     display: block;
 }
 
