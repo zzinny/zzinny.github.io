@@ -20,9 +20,9 @@ header {
     padding: 40px 0 60px 0;
 }
 
-.logo a {
+a {
     text-decoration: none;
-    color: inherit;
+    color: #000000;
 }
 
 .logo {
@@ -172,14 +172,14 @@ footer {
     color: #888888;
 }
 
-a:visited {
-    color: inherit;
-}
-
 .art-title {
     padding-top: 5px;
 }
 
 .meta-info {
     padding-bottom: 5px;
+}
+
+.back-button-container a {
+    text-decoration: underline;
 }
