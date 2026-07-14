@@ -3,39 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jieun Kim</title>
-    <link rel="stylesheet" href="../../style.css">
+    <title>JIEUN KIM</title>
+    <link rel="stylesheet" href="../../style2.css">
 </head>
 <body>
 
-    <div class="container">
+    <header>
+        <div class="logo"><a href="./index.html" style="text-decoration: none; color: #000;">JIEUN KIM</a></div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="detail-main">
         
-        <nav id="sidebar" class="sidebar"></nav>
-
-        <main class="content">
-            <div class="back-button-container">
-                <a href="./index.html" class="back-btn">
-                    <span class="arrow">&larr;</span> Back
-                </a>
+        <div class="back-button-container">
+            <a href="../index.html" class="back-btn">
+                <span class="arrow">&larr;</span> Back
+            </a>
+        </div>
+            
+        <section class="art-card">
+            <div class="main-images">
+                <img src="../../images/Rocks2.png" alt="Rocks image">
             </div>
-                
-            <section class="art-card">
-                <div class="text info">
-                    <h3>Generated Rocks</h3>
-                    <p class="meta-info">2025, Javascript, color</p>
-                    <div class="description">
-                        <p>Generated synthetic rocks using <a href="https://p5js.org/examples/angles-and-motion-triangle-strip/">Triangle Strip</a></p>
-                    </div>
+
+            <div class="art-info">
+                <h3 class="art-title">Generated Rocks</h3>
+                <p class="meta-info">2025, Javascript, color</p>
+                <div class="description">
+                    <p>Generated synthetic rocks using p5.js</p>
                 </div>
-                <div class="main-images">
-                    <img src="../../images/Rocks.png" alt="Rocks image">
-                </div>
-            </section>
+            </div>
+        </section>
 
-        </main>
+    </main>
 
-    </div>
+    <footer>
+        &copy; 2026 JIEUN KIM. All rights reserved.
+    </footer>
 
-    <script src="../../navigation.js"></script>
+    <!-- <script src="../../navigation.js"></script> -->
 </body>
 </html>

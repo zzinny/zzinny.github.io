@@ -102,16 +102,12 @@ a {
 }
 
 .menu-content .menu-item:hover {
-    background-color: #61FFA3;
+    color: #888888;
 }
 
-.logo:hover {
+/* .logo:hover {
     color: #EA52F2;
-}
-
-.menu-content .menu-item.active {
-    background-color: #61FFA3;
-}
+} */
 
 /* ==========================================================================
    4. 우측 메인 콘텐츠 및 갤러리 영역
