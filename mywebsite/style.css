@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* ==========================================================================
+   1. 기본 초기화 및 기본 스타일 (흰 바탕 + 검은 글씨)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 패딩과 테두리가 가로폭에 영향을 주지 않도록 설정 */
+    overscroll-behavior: none;
+}
+
+body {
+    font-family: 'Karla', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff; /* 흰색 바탕 */
+    color: #000000;            /* 검정 글자색 */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 링크 기본 스타일 제거 */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   2. 전체 레이아웃 구획 (PC 기준: 좌우 분할)
+   ========================================================================== */
+@media (min-width: 769px) {
+    .container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+    }
+    
+    .sidebar {
+        width: 20%;
+        /* padding: 0 20px; */
+
+        /* 스크롤을 내려도 메뉴 바가 좌측에 고정됨 */
+        position: sticky;
+        align-self: flex-start;
+        top: 20px;
+    }
+    
+    .content {
+        width: 80%;
+        padding: 20px 0px;
+        border-left: 1px solid black;
+        font-weight: 500;
+    }
+
+    .content .text {
+        padding: 0px 20px;
+    }
+}
+
+/* ==========================================================================
+   3. 좌측 메뉴 바 (Sidebar) 스타일
+   ========================================================================== */
+.sidebar-header {
+    display: block;
+    margin-bottom: 40px;
+}
+
+.menu-item.logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    display: block;
+}
+
+/* 모바일용 토글 버튼 (PC에서는 기본 숨김) */
+.toggle-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #000000;
+    padding: 5px;
+}
+
+.menu-content {
+    display: block;
+}
+
+.menu-item {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000000;
+    padding: 10px 30px;
+}
+
+/* .menu-content .menu-item {
+    border-top: 1px solid black;
+} */
+
+.menu-content .dead-item {
+    padding: 0px;
+}
+
+.menu-content .menu-item:hover {
+    color: #888888;
+}
+
+/* .logo:hover {
+    color: #EA52F2;
+} */
+
+/* ==========================================================================
+   4. 우측 메인 콘텐츠 및 갤러리 영역
+   ========================================================================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/* 썸네일 이미지 가로 배열 */
+.thumbnails {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 5px;
+}
+
+/* 이미지를 부드럽게 나열하기 위해 내부 요소 정렬 */
+@media (min-width: 481px) {
+    .thumbnails {
+        display: table;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 15px 0; /* 이미지 사이의 간격 */
+        margin-left: -15px;
+        width: calc(100% + 30px);
+    }
+    .thumbnails img {
+        display: table-cell;
+        width: 100%;
+    }
+}
+
+.thumbnails img {
+    height: auto;
+    object-fit: cover;
+    background-color: #f7f7f7; /* 이미지가 로딩되기 전 보일 아주 연한 회색 바탕 */
+}
+
+.info h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.art-card .info .meta-info {
+    color: #888;
+    font-size: 1.1rem;
+    margin-bottom: 0;     /* 아래 description과의 마진을 정밀 제어하기 위해 0으로 리셋 */
+}
+
+.art-card .info .description {
+    margin: 40px 0px;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.main-images {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.main-images img {
+    display: flex;
+    width: 100%;
+    max-width: 650px;
+    height: auto;          /* 💡 원본 사진 비율을 절대 깨뜨리지 않고 온전히 보여줍니다 */
+    object-fit: contain;   /* 💡 이미지가 크롭(잘림) 없이 전체 다 나오도록 설정 */
+    margin: 4px 4px 4px 40px;
+}
+
+/* 맨 마지막 이미지 아래에는 쓸데없는 여백이 생기지 않도록 제거 */
+.main-images img:last-child {
+    margin-bottom: 0;
+}
+
+/* 💻 PC 화면(769px 이상)에서 글과 이미지 영역의 레이아웃 조화 */
+@media (min-width: 769px) {
+    .detail-page-card {
+        display: table;
+        width: 100%;
+    }
+    
+    .detail-page-card .info {
+        display: table-cell;
+        width: 35%;        /* 글 영역 가로 비중 */
+        vertical-align: top;
+        padding-right: 40px;
+    }
+    
+    .detail-page-card .main-images {
+        display: table-cell;
+        width: 65%;        /* 이미지 영역 가로 비중 */
+        vertical-align: top;
+    }
+}
+
+.back-button-container {
+    width: 100%;
+    margin-bottom: 40px;   /* 💡 버튼 아래 작품 콘텐츠와의 여유로운 간격 */
+    padding: 0px 10px;
+    display: block;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;              /* 💡 화살표와 Back 글자 사이의 간격 */
+    color: #333;           /* 기본 글자 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-size: 0.95rem;     /* 과하지 않고 은은한 크기 */
+    letter-spacing: 0.05em;/* 자간을 살짝 벌려 세련되게 처리 */
+    font-weight: 500;
+}
+
+/* 화살표 기호 자체의 정렬 미세조정 */
+.back-btn .arrow {
+    font-size: 1.1rem;
+    position: relative;
+    top: -1px;             /* 글자 중심축과 시각적으로 맞추기 위해 살짝 올림 */
+    transition: transform 0.2s ease; /* 💡 애니메이션 준비 */
+}
+
+.back-btn:hover {
+    color: #888;
+}
+
+.back-btn:hover .arrow {
+    transform: translateX(-4px); /* 💡 화살표가 왼쪽으로 4px 스르륵 움직임 */
+}
+
+#canvas-container {
+    width: 100%;
+    height: 800px;
+}
+
+/* ==========================================================================
+   5. 📱 모바일 및 태블릿 대응 반응형 레이아웃 (768px 이하)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    /* 상단 바 형태로 변형 */
+    .sidebar-header {
+        display: table;
+        width: 100%;
+        margin-bottom: 0;
+        padding-bottom: 15px;
+        /* border-bottom: 1px solid #f0f0f0; */
+    }
+
+    .menu-item.logo {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .toggle-btn {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+    }
+
+    /* 기본 상태에서는 모바일 메뉴 목록을 숨김 */
+    .menu-content {
+        display: none;
+        padding: 30px 10px;
+        /* border-bottom: 1px solid #f0f0f0; */
+        margin-bottom: 40px;
+    }
+
+    /* 자바스크립트로 버튼을 누르면 .active 클래스가 붙어 메뉴가 나타남 */
+    .menu-content.active {
+        display: block;
+    }
+
+    .menu-item {
+        font-size: 1.05rem;
+    }
+
+    .submenu a {
+        font-size: 0.95rem;
+        margin-bottom: 18px;
+        padding: 5px 0;
+    }
+
+    /* 모바일에서는 썸네일 이미지가 아래로 쌓이도록 설정 */
+    .thumbnails img {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .thumbnails img:last-child {
+        margin-bottom: 0;
+    }
+    
+    .art-card {
+        margin-bottom: 70px;
+    }
+}

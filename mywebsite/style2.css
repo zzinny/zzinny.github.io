@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 0 40px; /* 전체 좌우 여백 */
+    line-height: 1.5;
+}
+
+/* 1. 헤더 (Header) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0 60px 0;
+}
+
+.logo {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+    color: #888888;
+}
+
+/* 2. 메인 바디 - 2 Column 레이아웃 */
+.home-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 좌우 50%씩 분할 */
+    column-gap: 60px;               /* 컬럼 사이 간격 */
+    row-gap: 40px;
+    align-items: start;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 컬럼 타이틀 스타일 */
+.column-title {
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+/* 타이틀 하단의 얇은 가로선 */
+.divider {
+    width: 25px;
+    height: 1px;
+    background-color: #000000;
+    margin-bottom: 40px;
+}
+
+/* 3. 컨텐츠 아이템 구조 */
+.content-item {
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.content-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* 이미지 하단 캡션 */
+.caption {
+    font-size: 11px;
+    color: #888888;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+/* 4. 푸터 (Footer) */
+footer {
+    margin-top: 100px;
+    padding: 40px 0;
+    border-top: 1px solid #eaeaea;
+    font-size: 12px;
+    color: #888888;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+/* 반응형 디자인: 화면이 좁아지면 1컬럼으로 세로 배치 */
+@media (max-width: 768px) {
+    body {
+        padding: 0 20px;
+    }
+    header {
+        padding: 30px 0;
+    }
+    main {
+        grid-template-columns: 1fr;
+        row-gap: 60px;
+    }
+    .column-title {
+        font-size: 24px;
+    }
+}
+
+/* 5. 상세 페이지 */
+
+.detail-main {
+    display: grid;
+    grid-template-columns: 2fr 8fr; /* 좌우 50%씩 분할 */
+    column-gap: 60px;               /* 컬럼 사이 간격 */
+    row-gap: 40px;
+    align-items: start;
+}
+
+.main-images {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-images img {
+    max-width: 100%;   /* 부모 컨테이너의 너비를 절대 넘지 않게 합니다. */
+    height: auto;      /* 원본 이미지의 비율을 유지하며 높이를 자동으로 조절합니다. */
+    display: block;    /* 불필요한 하단 여백을 제거합니다. */
+}
+
+#canvas-container {
+    width: 100%;
+    height: 800px; /* 💡 원하는 캔버스 높이를 픽셀(px) 단위로 명시해주세요! */
+    /* overflow: hidden; */
+}
+
+/* p5.js가 생성하는 canvas 태그 자체가 부모 내부에서 겉돌지 않도록 꽉 채워줍니다 */
+/* #canvas-container canvas {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+} */
+
+.meta-info {
+    color: #888888;
+}
+
+a:visited {
+    color: inherit;
+}
