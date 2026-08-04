@@ -156,7 +156,7 @@ footer {
 
 #canvas-container {
     width: 100%;
-    height: 800px; /* 💡 원하는 캔버스 높이를 픽셀(px) 단위로 명시해주세요! */
+    aspect-ratio: 16 / 9;
     /* overflow: hidden; */
     margin-bottom: 10px;
 }
