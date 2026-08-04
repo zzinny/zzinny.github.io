@@ -64,7 +64,7 @@ class Mover {
   }
   
   display() {
-    let r = 50;
+    let r = min(width, height) * 0.2;
     fill(97, 255, 163);
     stroke(175);
     ellipse(this.location.x, this.location.y, r, r);
