@@ -91,6 +91,7 @@ a {
     height: auto;
     display: block;
     object-fit: cover;
+    padding: 60px 60px 200px 60px;;
 }
 
 /* 이미지 하단 캡션 */
@@ -160,13 +161,6 @@ footer {
     /* overflow: hidden; */
     margin-bottom: 10px;
 }
-
-/* p5.js가 생성하는 canvas 태그 자체가 부모 내부에서 겉돌지 않도록 꽉 채워줍니다 */
-/* #canvas-container canvas {
-    display: block !important;
-    width: 100% !important;
-    height: 100% !important;
-} */
 
 .meta-info {
     color: #888888;
