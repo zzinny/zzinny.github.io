@@ -82,7 +82,8 @@ a {
 
 /* 3. 컨텐츠 아이템 구조 */
 .content-item {
-    margin-bottom: 50px;
+    margin-bottom: 200px;
+    padding: 60px;
     width: 100%;
 }
 
@@ -91,8 +92,7 @@ a {
     height: auto;
     display: block;
     object-fit: cover;
-    padding: 60px;
-    margin-bottom: 200px;
+    /* padding: 60px; */
 }
 
 /* 이미지 하단 캡션 */
