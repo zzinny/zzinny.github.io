@@ -91,7 +91,8 @@ a {
     height: auto;
     display: block;
     object-fit: cover;
-    padding: 60px 60px 200px 60px;;
+    padding: 60px;
+    margin-bottom: 200px;
 }
 
 /* 이미지 하단 캡션 */
